@@ -20,13 +20,7 @@ public class BranchDao {
 	@Autowired
 	private AddressDao addressDao;
 
-	public Branch saveBranch(Branch branch, int hid, int aid) {
-		Hospital hospital = dao.getHospitalById(hid);
-		branch.setHospital(hospital);
-		Address address = addressDao.getAddressById(aid);
-		branch.setAddress(address);
-		return repo.save(branch);
-	}
+	
 
 	public Branch updateBranch(int id, Branch branch) {
 		Branch dbBranch = repo.findById(id).get();
